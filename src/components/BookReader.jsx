@@ -1,9 +1,7 @@
 // src/components/BookReader.jsx
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Hash, BookOpen } from 'lucide-react';
-
-// Importa tus componentes de contenido
 import { Heading, Introduction, List, DefinitionList, Paragraph, SpecialNote, Table } from './content';
 
 // Carga dinámica de capítulos
@@ -84,6 +82,9 @@ const BookReader = () => {
   };
 
   const renderContent = (item, index) => {
+    if (item.tipo === 'h1_titulo_capitulo') { // Necesitarás un tipo para el título del capítulo
+        return <h1 key={`${activeChapter.id}-title`} className="text-5xl font-extrabold text-white mb-8 border-b-4 border-indigo-500 pb-4">{item.texto}</h1>
+    }
     const Component = {
         'introduccion': Introduction,
         'parrafo': Paragraph,
@@ -107,6 +108,7 @@ const BookReader = () => {
 
   return (
     <div className="flex h-screen bg-slate-900 text-slate-300 font-sans overflow-x-hidden">
+      {/* BARRA LATERAL: Añadimos un borde derecho para una separación sutil */}
       <aside className="w-72 bg-slate-800 p-4 flex flex-col h-full border-r border-slate-700/50 shrink-0">
         <header className="mb-4 p-2">
           <h1 className="text-xl font-bold text-white flex items-center gap-2"><BookOpen size={20} /> {book.titulo}</h1>
@@ -129,30 +131,34 @@ const BookReader = () => {
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.25 }}
             >
-              {/* QUITAMOS las clases "prose" de este div */}
               <div>
+                {/* Título principal con nuevo estilo */}
+                <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl mb-8 border-b-4 border-indigo-500 pb-4">
+                  {activeChapter.titulo}
+                </h1>
                 {activeChapter.contenido.map(renderContent)}
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
 
+        {/* PIE DE PÁGINA: Estilo moderno con fondo semi-transparente y borde superior */}
         <footer className="sticky bottom-0 mt-auto bg-slate-800/80 backdrop-blur-sm border-t border-slate-700/50">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 py-3 flex justify-between items-center">
             <button
               onClick={() => setActiveChapterIndex(i => i - 1)}
               disabled={activeChapterIndex === 0}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <ChevronLeft size={16} /> Anterior
             </button>
-            <div className="text-sm text-slate-400">
-              Capítulo {activeChapterIndex + 1} de {book.capitulos.length}: {activeChapter.titulo.replace(/Capítulo \d+: /, '')}
+            <div className="text-sm text-slate-400 text-center truncate px-4">
+              Cap. {activeChapter.numero}: {activeChapter.titulo.replace(/Capítulo \\d+: /, '')}
             </div>
             <button
               onClick={() => setActiveChapterIndex(i => i + 1)}
               disabled={activeChapterIndex >= book.capitulos.length - 1}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               Siguiente <ChevronRight size={16} />
             </button>
@@ -162,5 +168,6 @@ const BookReader = () => {
     </div>
   );
 };
+
 
 export default BookReader;
