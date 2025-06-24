@@ -474,7 +474,7 @@ const capitulo8 = {
     },
     {
       tipo: "h2",
-      texto: "Habilidades"
+      texto: "Descripciones de Habilidades"
     },
     {
       tipo: "h3",

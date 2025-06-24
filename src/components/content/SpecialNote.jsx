@@ -1,7 +1,9 @@
-const SpecialNote = ({ texto }) => (
-  <div className="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 text-yellow-800 dark:text-yellow-200 p-4 rounded-r-lg my-6">
-    <p className="font-semibold">Nota Importante</p>
-    <p>{texto}</p>
+const SpecialNote = ({ titulo, texto }) => (
+  <div className="my-6 rounded-lg border-l-4 border-amber-500 bg-amber-500/10 p-4 text-amber-700 dark:text-amber-300">
+    {titulo && <p className="font-bold mb-2">{titulo}</p>}
+    <div className="prose prose-sm dark:prose-invert max-w-none">
+      <p>{texto}</p>
+    </div>
   </div>
 );
 

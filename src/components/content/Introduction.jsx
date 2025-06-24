@@ -1,5 +1,8 @@
+// src/components/content/Introduction.jsx
 const Introduction = ({ texto }) => (
-  <p className="text-lg italic text-slate-500 dark:text-slate-400 mb-6 border-l-4 border-blue-500 pl-4">{texto}</p>
+  <p className="mb-8 text-lg italic text-slate-400 border-l-4 border-indigo-500 pl-4 py-2">
+    {texto}
+  </p>
 );
 
 export default Introduction;
