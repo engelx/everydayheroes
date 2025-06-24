@@ -5,6 +5,7 @@ import DefinitionList from './DefinitionList';
 import Paragraph from './Paragraph';
 import SpecialNote from './SpecialNote';
 import Table from './Table';
+import TableOfContents from './TableOfContents';
 
 export {
   Heading,
@@ -14,4 +15,5 @@ export {
   Paragraph,
   SpecialNote,
   Table,
+  TableOfContents,
 };

@@ -1,13 +1,12 @@
 // src/components/content/DefinitionList.jsx
 const DefinitionList = ({ items }) => (
-  <dl className="my-6 space-y-4">
+  // La clase principal se mantiene en <dl>
+  <dl className="definition-list">
     {items.map((item, index) => (
-      <div key={index} className="p-4 rounded-lg bg-slate-800/50 border border-slate-700">
-        <dt className="font-semibold text-indigo-400">{item.termino}</dt>
-        <dd 
-          className="mt-1 text-slate-400"
-          dangerouslySetInnerHTML={{ __html: item.definicion }}
-        />
+      // NUEVO: Envolvemos cada par en un <div> para mejor estructura y estilizado
+      <div key={index} className="definition-item">
+        <dt>{item.termino}</dt>
+        <dd dangerouslySetInnerHTML={{ __html: item.definicion }} />
       </div>
     ))}
   </dl>
