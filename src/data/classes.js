@@ -11,6 +11,7 @@ export const classes = [
     skillChoicesCount: 2,
     equipmentProficiencies: ['equipo_basico', 'equipo_improvisado'],
     equipmentRecommendations: { pack: 'Paquete de Tipazo', weapons: 'Golpes desarmados y cualquier cosa que encuentres tirada.' },
+    level1Talents: ['Aplastar', 'Lanzar', 'Despedazar'],
   },
   {
     id: 'artillero_pesado',
@@ -22,6 +23,7 @@ export const classes = [
     skillChoicesCount: 2,
     equipmentProficiencies: ['equipo_basico', 'equipo_avanzado', 'equipo_militar'],
     equipmentRecommendations: { pack: 'Paquete de Soldado', weapons: 'Ametralladora ligera o cañón de mano.' },
+    level1Talents: ['Armas Grandes', 'Salva'],
   },
   {
     id: 'luchador_mma',
@@ -33,6 +35,7 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: ['equipo_basico'],
     equipmentRecommendations: { pack: 'Paquete de Fitness', weapons: 'Golpe desarmado.' },
+    level1Talents: ['Manos Pesadas', 'Inmovilizar', 'Movimiento de Sumisión'],
   },
   // --- Héroes Ágiles ---
   {
@@ -45,6 +48,7 @@ export const classes = [
     skillChoicesCount: 2,
     equipmentProficiencies: ['equipo_basico', 'equipo_historico'],
     equipmentRecommendations: { pack: 'Paquete de Artista Marcial o Paquete de Fitness', weapons: 'Golpe desarmado o espada.' },
+    level1Talents: ['Artes Marciales'],
   },
   {
     id: 'picaro',
@@ -56,6 +60,7 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: ['equipo_basico', 'equipo_avanzado'],
     equipmentRecommendations: { pack: 'Paquete de Criminal Callejero o Paquete de Espía', weapons: 'Escopeta de corredera, puños americanos o pistola paralizante.' },
+    level1Talents: ['Golpe Vital'],
   },
   {
     id: 'tirador_certero',
@@ -67,6 +72,7 @@ export const classes = [
     skillChoicesCount: 2,
     equipmentProficiencies: ['equipo_basico', 'equipo_avanzado'],
     equipmentRecommendations: { pack: 'Paquete de Bajo Mundo o Paquete de Francotirador', weapons: 'Dos pistolas de porte oculto o rifle de francotirador.' },
+    level1Talents: ['Pistolero', 'Tiro Certero'],
   },
   // --- Héroes Resistentes ---
   {
@@ -79,6 +85,7 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: ['equipo_basico', 'equipo_avanzado'],
     equipmentRecommendations: { pack: 'Paquete de Guardaespaldas', weapons: 'Pistola de porte oculto, pistola paralizante, rifle táctico.' },
+    level1Talents: ['¡Agáchate!', 'Recibir una Bala'],
   },
   {
     id: 'comando',
@@ -90,6 +97,7 @@ export const classes = [
     skillChoicesCount: 2,
     equipmentProficiencies: ['equipo_basico', 'equipo_avanzado', 'equipo_militar'],
     equipmentRecommendations: { pack: 'Paquete de Soldado', weapons: 'Rifle de asalto de carabina, pistola semiautomática de 9mm, cuchillo de combate.' },
+    level1Talents: ['Espíritu de Lucha', 'Cuida tu Espalda'],
   },
   {
     id: 'scrapper',
@@ -101,6 +109,7 @@ export const classes = [
     skillChoicesCount: 1,
     equipmentProficiencies: ['equipo_basico', 'equipo_avanzado', 'equipo_improvisado'],
     equipmentRecommendations: { pack: 'Paquete de Matón', weapons: 'Puños americanos, mazo.' },
+    level1Talents: ['Oportunista'],
   },
   // --- Héroes Inteligentes ---
   {
@@ -113,6 +122,7 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: ['equipo_basico'],
     equipmentRecommendations: { pack: 'Paquete de Mecánico', weapons: 'Pistola paralizante.' },
+    level1Talents: ['Compañero Mecánico', 'Reparaciones de Campo'],
   },
   {
     id: 'hacker',
@@ -124,6 +134,7 @@ export const classes = [
     skillChoicesCount: 4,
     equipmentProficiencies: ['equipo_basico'],
     equipmentRecommendations: { pack: 'Paquete de Hacker', weapons: 'Pistola paralizante o spray de pimienta.' },
+    level1Talents: ['Fantasma Digital', 'Es para Ti'],
   },
   {
     id: 'mente_maestra',
@@ -135,6 +146,7 @@ export const classes = [
     skillChoicesCount: 4,
     equipmentProficiencies: ['equipo_basico'],
     equipmentRecommendations: { pack: 'Paquete Ejecutivo', weapons: 'Pistola de bolsillo calibre .38 o rifle de caza.' },
+    level1Talents: ['Sabelotodo', 'Lo Estás Haciendo Mal'],
   },
   {
     id: 'cientifico',
@@ -146,6 +158,7 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: [],
     equipmentRecommendations: { pack: 'Paquete de Científico', weapons: 'Ninguna.' },
+    level1Talents: ['Cosas Peligrosas'],
   },
   // --- Héroes Sabios ---
   {
@@ -158,6 +171,7 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: ['equipo_basico', 'equipo_avanzado'],
     equipmentRecommendations: { pack: 'Paquete de Cazador', weapons: 'Rifle de caza o arco moderno.' },
+    level1Talents: ['Compañero de Caza', 'Marca del Cazador', 'Cría de Animales'],
   },
   {
     id: 'maestro',
@@ -169,6 +183,7 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: ['equipo_basico', 'equipo_improvisado'],
     equipmentRecommendations: { pack: 'Paquete de Artista Marcial', weapons: 'Golpes desarmados o armas improvisadas.' },
+    level1Talents: ['Artes Místicas', 'Ki'],
   },
   {
     id: 'detective',
@@ -180,6 +195,7 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: ['equipo_basico'],
     equipmentRecommendations: { pack: 'Paquete de Detective o Paquete de Policía', weapons: 'Pistola revólver pesada o rifle de caza.' },
+    level1Talents: ['Deducción', 'Sexto Sentido', 'Punto Débil'],
   },
   // --- Héroes Encantadores ---
   {
@@ -192,6 +208,7 @@ export const classes = [
     skillChoicesCount: 2,
     equipmentProficiencies: ['equipo_basico', 'equipo_historico'],
     equipmentRecommendations: { pack: 'Paquete de Duelista', weapons: 'Florete.' },
+    level1Talents: ['Precisión'],
   },
   {
     id: 'icono',
@@ -203,6 +220,7 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: ['equipo_basico', 'equipo_avanzado'],
     equipmentRecommendations: { pack: 'Paquete de Animador', weapons: 'Escopeta de corredera o cañón de mano.' },
+    level1Talents: ['Bromas', 'Centro de Atención'],
   },
   {
     id: 'lider',
@@ -214,6 +232,7 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: ['equipo_basico', 'equipo_avanzado'],
     equipmentRecommendations: { pack: 'Paquete Ejecutivo', weapons: 'Rifle táctico.' },
+    level1Talents: ['Mando'],
   },
   {
     id: 'manipulador',
@@ -225,5 +244,6 @@ export const classes = [
     skillChoicesCount: 3,
     equipmentProficiencies: [],
     equipmentRecommendations: { pack: 'Paquete de Socialité', weapons: 'Ninguna o escopeta de doble cañón.' },
+    level1Talents: ['Desmoralizar'],
   },
 ];
