@@ -26,7 +26,6 @@ body, html, #root {
   font-family: var(--font-sans);
   background-color: var(--bg-main);
   color: var(--text-primary);
-  overflow: hidden;
 }
 
 /* === ESTRUCTURA PRINCIPAL (GRID) === */

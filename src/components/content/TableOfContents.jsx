@@ -5,13 +5,13 @@ const createSlug = (text) => text ? text.toLowerCase().replace(/[^a-z0-9]+/g, '-
 
 const TableOfContents = ({ chapter }) => {
     if (!chapter || !chapter.contenido) {
-        return <p className="text-sm text-slate-500">No hay secciones.</p>;
+        return <p className="">No hay secciones.</p>;
     }
 
     const tocItems = chapter.contenido.filter(item => item.tipo === 'h2' || item.tipo === 'h3');
 
     if (tocItems.length === 0) {
-        return <p className="text-sm text-slate-500">No hay secciones.</p>;
+        return <p className="">No hay secciones.</p>;
     }
     
     const handleScrollTo = (e, slug) => {

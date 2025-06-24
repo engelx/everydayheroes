@@ -1,3 +1,4 @@
+// src/components/BookReader.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { useBookData } from '../hooks/useBookData';
 import { useSearch } from '../hooks/useSearch';
@@ -5,22 +6,21 @@ import ChapterNavigation from './ChapterNavigation';
 import ContentRenderer from './ContentRenderer';
 import TableOfContents from './content/TableOfContents';
 
-const BookReader = () => {
+// Acepta la nueva prop y la pasa a ChapterNavigation
+const BookReader = ({ onStartWizard }) => {
     const { book } = useBookData();
     const [activeChapterIndex, setActiveChapterIndex] = useState(0);
     const contentRef = useRef(null);
 
     const search = useSearch(book, activeChapterIndex, setActiveChapterIndex);
 
-    // Efecto para hacer scroll en la columna de contenido principal
+    // ... toda la lógica existente del componente se mantiene intacta ...
     useEffect(() => {
-        // Solo haz scroll al principio si NO estamos en medio de una navegación de búsqueda
         if (!search.isNavigatingRef.current) {
            contentRef.current?.scrollTo(0, 0);
         }
     }, [activeChapterIndex, search.isNavigatingRef]);
     
-    // Efecto para actualizar las coincidencias DOM en el capítulo activo
     useEffect(() => {
         if (!search.searchTerm.trim()) return;
         setTimeout(() => {
@@ -65,6 +65,7 @@ const BookReader = () => {
                 book={book}
                 activeChapterId={activeChapter?.id}
                 onSelectChapter={handleSelectChapter}
+                onStartWizard={onStartWizard} // Se pasa la prop
                 {...search}
             />
 
