@@ -193,3 +193,28 @@ body {
 .create-char-btn:hover svg {
   transform: rotate(90deg);
 }
+.wizard-group-header {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #555;
+  color: #ccc;
+}
+
+.expansion-card {
+  border-color: #00bcd4; /* Un color cian para destacar */
+  position: relative;
+  overflow: hidden;
+}
+
+.expansion-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #00bcd4;
+  color: #121212;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-bottom-left-radius: 8px;
+}
