@@ -24,7 +24,7 @@ const ChapterNavigation = ({
         <aside className="sidebar-nav">
             <header className="sidebar-header">
                 <h1>{book.titulo}</h1>
-                <p>Visor del Libro de Reglas</p>
+                <p>¡Hola! Visor del Libro de Reglas</p>
             </header>
             
             <div className="search-container">
